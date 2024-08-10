@@ -86,7 +86,7 @@ const handleOption = (question,selectOption)=>{
   return (
     <div ref={targetRef}>
       <h2 className='text-center border border-info mt-3 bg-info p-2'>Exam paper</h2>
-      <div>{value.h} Hour {value.m} Minute {value.s} seconds</div>
+      <div className='border border-dark text-center my-2'>{value.h} Hour {value.m} Minute {value.s} seconds</div>
       {  questions.map((ele,i)=>{
         return <ol key={ele._id} type='A'>
             <h5>Question {i+1} : {ele.question}</h5>

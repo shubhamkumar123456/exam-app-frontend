@@ -34,7 +34,9 @@ function App() {
                 {!login  && <Route path='/login' element={<Login/>}/>}
                 {login  && admin &&  <Route path='/login' element={<Navigate to={'/admin'}/>}/>}
                 {login  && !admin &&  <Route path='/login' element={<Navigate to={'/dashboard/student'}/>}/>}
-                <Route path='/signup' element={<Signup/>}/>
+               {login &&admin===false && <Route path='/signup' element={<Navigate to="/dashboard/student"/>}/>}
+               {login &&admin===true && <Route path='/signup' element={<Navigate to="/admin"/>}/>}
+               {!login && <Route path='/signup' element={<Signup/>}/>}
                 {login && <Route path='/admin' element={<AdminPage/>}/>}
                 {!login && <Route path='/admin' element={<Navigate to={'/login'}/>}/>}
                 {login && <Route path='/studentExam' element={<Exampage/>}/>}

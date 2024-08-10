@@ -45,11 +45,11 @@ const Landingpage = () => {
   return (
     <div>
       <h4 className='text-center mt-3'>Select a exam</h4>
-      <form className=''>
+      <div className='d-flex flex-column col-md-4 m-auto p-3 gap-2'>
         {allExams.map((ele) => {
-          return <div key={ele._id}><input name='radio' type='radio'/><label className=''  onClick={() => setSelectedExam(ele)}> {ele.examName}</label></div> 
+          return <label className='form-control bg-dark text-white' key={ele._id} onClick={() => setSelectedExam(ele)}><input name='radio' type='radio'/> {ele.examName}</label>
         })}
-      </form>
+      </div>
 
       <div className='d-flex flex-column w-25 gap-2 m-auto'>
         <button onClick={handleContinue} to="/studentExam" className='btn btn-success'>Continue</button>

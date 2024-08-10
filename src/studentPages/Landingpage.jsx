@@ -45,9 +45,9 @@ const Landingpage = () => {
   return (
     <div>
       <h4 className='text-center mt-3'>Select a exam</h4>
-      <form className='d-flex flex-column col-md-4 m-auto p-3 gap-2'>
+      <form className=''>
         {allExams.map((ele) => {
-          return <><input name='radio' type='radio'/><label className='' key={ele._id} onClick={() => setSelectedExam(ele)}> {ele.examName}</label></> 
+          return <div key={ele._id}><input name='radio' type='radio'/><label className=''  onClick={() => setSelectedExam(ele)}> {ele.examName}</label></div> 
         })}
       </form>
 

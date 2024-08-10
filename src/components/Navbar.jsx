@@ -29,11 +29,14 @@ function Header() {
             {ctx.user.login && ctx.user.user.isAdmin===false &&<li className="nav-item">
               <Link className="nav-link me-lg-3  " to="/landingpage">Exam page</Link>
             </li>}
-           {ctx.user.login && ctx.user.isAdmin===true && <li className="nav-item">
+           {/* {ctx.user.login && ctx.user.isAdmin===true && <li className="nav-item">
               <Link className="nav-link  " to="/admin">Dashboard</Link>
-            </li>}
-           {ctx.user.login && <li className="nav-item">
+            </li>} */}
+           {ctx.user.login && ctx.user.user.isAdmin===false && <li className="nav-item">
               <Link className="nav-link  " to="/dashboard/student">Dashboard</Link>
+            </li>}
+           {ctx.user.login && ctx.user.user.isAdmin===true && <li className="nav-item">
+              <Link className="nav-link  " to="/admin">Dashboard</Link>
             </li>}
 
             {ctx.user.login && <li onClick={handleLogout} className="nav-item">

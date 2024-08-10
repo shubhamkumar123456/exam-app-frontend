@@ -29,20 +29,21 @@ function App() {
       <BrowserRouter>
         <Navbar/>
             <Routes>
-                {login && <Route path='/' element={<Home/>}/>}
-                {!login && <Route path='/' element={<Navigate to={'/login'}/>}/>}
-                {!login  && <Route path='/login' element={<Login/>}/>}
-                {login  && admin &&  <Route path='/login' element={<Navigate to={'/admin'}/>}/>}
-                {login  && !admin &&  <Route path='/login' element={<Navigate to={'/dashboard/student'}/>}/>}
-               {login &&admin===false && <Route path='/signup' element={<Navigate to="/dashboard/student"/>}/>}
-               {login &&admin===true && <Route path='/signup' element={<Navigate to="/admin"/>}/>}
-               {!login && <Route path='/signup' element={<Signup/>}/>}
-                {login && <Route path='/admin' element={<AdminPage/>}/>}
-                {!login && <Route path='/admin' element={<Navigate to={'/login'}/>}/>}
-                {login && <Route path='/studentExam' element={<Exampage/>}/>}
-               {login && <Route path='/landingpage' element={<Landingpage/>}/>}
-               {login && <Route path='/question/:tags' element={<Question/>}/>}
-              { login && <Route path='/dashboard/student' element={<StudenteDashBoard/>}/>}
+                {login===true  && admin&& <Route path='/' element={<AdminPage/>}/>}
+                {login===true  && !admin&& <Route path='/' element={<StudenteDashBoard/>}/>}
+                {login===false && <Route path='/' element={<Navigate to={'/login'}/>}/>}
+                {login===false  && <Route path='/login' element={<Login/>}/>}
+                {login===true  && admin===true &&  <Route path='/login' element={<Navigate to={'/admin'}/>}/>}
+                {login===true  && admin===false &&  <Route path='/login' element={<Navigate to={'/dashboard/student'}/>}/>}
+               {login===true &&admin===false && <Route path='/signup' element={<Navigate to="/dashboard/student"/>}/>}
+               {login===true &&admin===true && <Route path='/signup' element={<Navigate to="/admin"/>}/>}
+               {login===false && <Route path='/signup' element={<Signup/>}/>}
+                {login===true && <Route path='/admin' element={<AdminPage/>}/>}
+                {login===false && <Route path='/admin' element={<Navigate to={'/login'}/>}/>}
+                {login===true && <Route path='/studentExam' element={<Exampage/>}/>}
+               {login===true && <Route path='/landingpage' element={<Landingpage/>}/>}
+               {login===true && <Route path='/question/:tags' element={<Question/>}/>}
+              { login===true && <Route path='/dashboard/student' element={<StudenteDashBoard/>}/>}
               <Route path='/examsubmitted' element={<ExamsubmitedSuccess/>}/>
 
 

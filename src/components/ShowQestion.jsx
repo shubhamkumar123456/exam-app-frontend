@@ -9,7 +9,7 @@ const ShowQestion = (props) => {
     const [question, setquestion] = useState("");
     const [examId, setexamId] = useState("");
     const getData = async()=>{
-        let res = await axios.get('http://localhost:8080/question/getall');
+        let res = await axios.get('https://exam-app-backend-alyd.onrender.com/question/getall');
         let data = res.data;
         // console.log(data.questions);
         setquestions(data.questions);
@@ -56,7 +56,7 @@ const ShowQestion = (props) => {
         let obj={
          question:question._id
         }
-        let res = await axios.put(`http://localhost:8080/exam/addquestion/${examId}`, obj)
+        let res = await axios.put(`https://exam-app-backend-alyd.onrender.com/exam/addquestion/${examId}`, obj)
         let data = res.data;
         console.log(data)
         props.fetchExam()

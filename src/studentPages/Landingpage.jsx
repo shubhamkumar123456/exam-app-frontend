@@ -29,7 +29,7 @@ const Landingpage = () => {
     if (selectedExam) {
       console.log("yes")
 
-      let res = await axios.post(`http://localhost:8080/attempted/create/${userId}/${selectedExam._id}`)
+      let res = await axios.post(`https://exam-app-backend-alyd.onrender.com/attempted/create/${userId}/${selectedExam._id}`)
       console.log(res)
 
       if(res.data.success){

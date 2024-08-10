@@ -10,7 +10,7 @@ const StudenteDashBoard = () => {
     let user = JSON.parse(localStorage.getItem('user_details'))
   let userId = user.user._id
     let StudentAllExam = async()=>{
-        let res = await axios.get(`http://localhost:8080/attempted/getSingleUser/${userId}`);
+        let res = await axios.get(`https://exam-app-backend-alyd.onrender.com/attempted/getSingleUser/${userId}`);
         let data = res.data
         // console.log(data);
         setdetails(data);

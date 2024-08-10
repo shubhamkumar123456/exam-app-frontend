@@ -30,7 +30,7 @@ const CreateQuestion = (props) => {
             category: categoryRef.current.value
         }
 console.log(obj)
-        let res = await axios.post('http://localhost:8080/question/create', obj);
+        let res = await axios.post('https://exam-app-backend-alyd.onrender.com/question/create', obj);
         let data = res.data;
         console.log(data);
         if (data.success) {

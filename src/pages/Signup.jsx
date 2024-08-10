@@ -17,7 +17,7 @@ const Signup = () => {
       password:passwordRef.current.value
     }
     // console.log(obj)
-    let res = await axios.post('http://localhost:8080/user/create',obj)
+    let res = await axios.post('https://exam-app-backend-alyd.onrender.com/user/create',obj)
     let data = res.data;
     // console.log(data)
     if(data.success){

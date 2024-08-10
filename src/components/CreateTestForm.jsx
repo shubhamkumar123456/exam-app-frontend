@@ -36,7 +36,7 @@ const CreateTestForm = (props) => {
       category:categoryRef.current.value
     }
     console.log(obj)
-    let res = await axios.post('http://localhost:8080/test/create', obj)
+    let res = await axios.post('https://exam-app-backend-alyd.onrender.com/test/create', obj)
     console.log(res)
     if(res.ok){
       alert("question added successfully")

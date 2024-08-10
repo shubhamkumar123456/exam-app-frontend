@@ -16,7 +16,7 @@ const Login = () => {
       email:emailRef.current.value,
       password:passwordRef.current.value
     }
-    let res = await axios.post('http://localhost:8080/user/login',obj)
+    let res = await axios.post('https://exam-app-backend-alyd.onrender.com/user/login',obj)
     let data = res.data;
     // console.log(data)
     if(data.success){

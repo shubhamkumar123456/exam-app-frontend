@@ -74,7 +74,7 @@ const handleOption = (question,selectOption)=>{
 
 
  async function handleSubmit() {
-    let res = await axios.put(`http://localhost:8080/attempted/create/${userId}/${examId}`,{attempted:YourQuestion});
+    let res = await axios.put(`https://exam-app-backend-alyd.onrender.com/attempted/create/${userId}/${examId}`,{attempted:YourQuestion});
     let data = res.data;
     console.log(data)
     navigate('/examsubmitted')

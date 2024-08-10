@@ -18,7 +18,7 @@ const CreateExamForm = (props) => {
             examName:examRef.current.value,
             batch:batchRef.current.value
         }
-        let res = await axios.post('http://localhost:8080/exam/createexam',obj)
+        let res = await axios.post('https://exam-app-backend-alyd.onrender.com/exam/createexam',obj)
         let data = res.data;
         console.log(data);
         if(data.success){

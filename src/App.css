@@ -5,3 +5,22 @@
 .navbar{
     background-color: rgb(255, 132, 0)!important;
 }
+.loader{
+   width: 100vw;
+   height: 100vh !important;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   
+    position: absolute!important;
+    top: 200px!important;
+    top: 50%;
+    left: 50%;
+    background-color: rgb(0, 0, 0,0.5);
+    transform: translate(-50%,-50%);
+}
+.loaderContent{
+        color: white;
+        width: 100vw;
+       
+}

@@ -1,12 +1,12 @@
 import { Col, Modal, Row, Statistic } from 'antd';
-import React, { useContext, useRef, useState } from 'react'
-import UserContext from '../context/UserContext';
+import React, {  useRef, useState } from 'react'
+
 import axios from 'axios';
 import generatePDF from 'react-to-pdf';
 const AlluserDetails = (props) => {
     const targetRef = useRef();
     // console.log(props.allUser)
-    const ctx = useContext(UserContext)
+   
     // console.log(ctx)
     const [showModal, setshowModal] = useState(false);
     const [result, setresult] = useState([]);

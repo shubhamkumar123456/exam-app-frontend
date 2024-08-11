@@ -14,21 +14,39 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import StudenteDashBoard from './studentPages/StudenteDashBoard';
 import Navbar from './components/Navbar';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import UserContext from './context/UserContext';
 import ExamsubmitedSuccess from './pages/ExamsubmitedSuccess';
 import Landing1 from './studentPages/Landing1';
+import LoaderComponent from './components/LoaderComponent';
+import axios from 'axios';
 
 function App() {
+  const [loading, setloading] = useState(false);
   let ctx = useContext(UserContext);
   console.log(ctx);
   let login = ctx.user.login;
   let admin = ctx.user.user.isAdmin || false
   console.log(admin);
+  useEffect(()=>{
+      axios.interceptors.request.use((config)=>{
+        setloading(true);
+        return config;
+      },(error)=>{
+        return Promise.reject(error)
+      })
+      axios.interceptors.response.use((config)=>{
+        setloading(false);
+        return config;
+      },(error)=>{
+        return Promise.reject(error)
+      })
+  },[])
   return (
     <div className="App">
       <BrowserRouter>
         <Navbar/>
+        <LoaderComponent show={loading}/>
             <Routes>
                 {login===true  && admin&& <Route path='/' element={<AdminPage/>}/>}
                 {login===true  && !admin&& <Route path='/' element={<StudenteDashBoard/>}/>}

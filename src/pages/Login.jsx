@@ -3,6 +3,7 @@ import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
 import UserContext from '../context/UserContext'
 import { toast } from 'react-toastify';
+
 const Login = () => {
   const ctx = useContext(UserContext)
   // console.log(ctx)
@@ -42,6 +43,7 @@ const Login = () => {
   }
   return (
     <div>
+    
 <form className='col-md-6 p-4 m-auto mt-5 border border-dark'>
   <h3 className='text-center'>Login page</h3>
   <div className="mb-3">

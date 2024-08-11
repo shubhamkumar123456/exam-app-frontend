@@ -24,7 +24,7 @@ const ShowExam = (props) => {
     }
   return (
     <div>
-      <h1>Show exam page</h1>
+      <h3 className='text-center bg-secondary'>Show exam page</h3>
 
       <Row gutter={16}>
     {props.Exams.map((ele)=>{

@@ -57,6 +57,9 @@ const Landingpage = () => {
         <h6 className='text-center'>OR</h6>
         <a href={"/dashboard/student"} className="btn btn-info mt-2">Dashboard</a>
       </div> */}
+      {allExams.map((ele)=>{
+        return <div>ele  {ele.examName}</div>
+      })}
     </div>
   )
 }

@@ -17,6 +17,7 @@ import Navbar from './components/Navbar';
 import { useContext } from 'react';
 import UserContext from './context/UserContext';
 import ExamsubmitedSuccess from './pages/ExamsubmitedSuccess';
+import Landing1 from './studentPages/Landing1';
 
 function App() {
   let ctx = useContext(UserContext);
@@ -41,7 +42,7 @@ function App() {
                 {login===true && <Route path='/admin' element={<AdminPage/>}/>}
                 {login===false && <Route path='/admin' element={<Navigate to={'/login'}/>}/>}
                 {login===true && <Route path='/studentExam' element={<Exampage/>}/>}
-               {login===true && <Route path='/landingpage' element={<Landingpage/>}/>}
+               {login===true && <Route path='/landingpage' element={<Landing1/>}/>}
                {login===true && <Route path='/question/:tags' element={<Question/>}/>}
               { login===true && <Route path='/dashboard/student' element={<StudenteDashBoard/>}/>}
               <Route path='/examsubmitted' element={<ExamsubmitedSuccess/>}/>

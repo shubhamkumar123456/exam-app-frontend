@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import UserContext from '../context/UserContext';
 import { toast } from 'react-toastify';
 
-const Landingpage = () => {
+const Landing1 = () => {
   const ctx = useContext(UserContext)
   let userId = ctx.user.user._id
 
@@ -61,4 +61,4 @@ const Landingpage = () => {
   )
 }
 
-export default Landingpage
+export default Landing1

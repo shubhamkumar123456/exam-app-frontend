@@ -1,6 +1,6 @@
 import axios from 'axios';
-import React, { useContext, useEffect, useRef, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import React, { useContext, useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import UserContext from '../context/UserContext';
 import { toast } from 'react-toastify';
 
@@ -52,11 +52,11 @@ const Landingpage = () => {
       </div>
       
 
-      <div className='d-flex flex-column w-25 gap-2 m-auto'>
+      {/* <div className='d-flex flex-column w-25 gap-2 m-auto'>
         <button onClick={handleContinue} to="/studentExam" className='btn btn-success'>Continue</button>
         <h6 className='text-center'>OR</h6>
         <a href={"/dashboard/student"} className="btn btn-info mt-2">Dashboard</a>
-      </div>
+      </div> */}
     </div>
   )
 }

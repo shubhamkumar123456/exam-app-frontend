@@ -42,7 +42,7 @@ function App() {
                 {login===true && <Route path='/admin' element={<AdminPage/>}/>}
                 {login===false && <Route path='/admin' element={<Navigate to={'/login'}/>}/>}
                 {login===true && <Route path='/studentExam' element={<Exampage/>}/>}
-               {login===true && <Route path='/landingpage' element={<Landing1/>}/>}
+               {login===true && <Route path='/landingpage' element={<Landingpage/>}/>}
                {login===true && <Route path='/question/:tags' element={<Question/>}/>}
               { login===true && <Route path='/dashboard/student' element={<StudenteDashBoard/>}/>}
               <Route path='/examsubmitted' element={<ExamsubmitedSuccess/>}/>

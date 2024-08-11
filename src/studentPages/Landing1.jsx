@@ -43,7 +43,7 @@ const Landing1 = () => {
     }
   }
   return (
-    <div>
+    <div className='row m-0 p-0'>
       <h4 className='text-center mt-3'>Select a exam</h4>
       <div className='d-flex flex-column col-md-4 m-auto p-3 gap-2'>
         {allExams.map((ele) => {

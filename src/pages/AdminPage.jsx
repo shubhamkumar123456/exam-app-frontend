@@ -76,7 +76,7 @@ const AdminPage = () => {
       </div>
       <div className="col-md-8">
 
-        {showExamPage && <ShowExam Exams={Exams} />}
+        {showExamPage && <ShowExam Exams={Exams} fetchExam={fetchExam}/>}
         <ShowQestion fetchExam={fetchExam} Exams={Exams} isQuestionModalOpen={isQuestionModalOpen} setIsQuestionModalOpen={setIsQuestionModalOpen} />
         <CreateExamForm setIsModalOpen1={setIsModalOpen1} isModalOpen1={isModalOpen1} />
         <CreateQuestion setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} />

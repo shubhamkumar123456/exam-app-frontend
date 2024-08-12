@@ -32,6 +32,9 @@ const ShowExam = (props) => {
       // console.log(`switch to ${checked}`);
       let res =await axios.put(`https://exam-app-backend-alyd.onrender.com/exam/toggleExam/${ans._id}`,{enable:!enable})
       let data = res.data;
+      console.log(data)
+      props.fetchExam()
+
     };
   return (
     <div>

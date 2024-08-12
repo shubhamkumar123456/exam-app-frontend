@@ -47,7 +47,7 @@ const Landingpage = () => {
       <h4 className='text-center mt-3'>Select a exam</h4>
       <div className='d-flex flex-column col-md-4 m-auto p-3 gap-2'>
         {allExams.map((ele) => {
-          return <label className='form-control bg-dark text-white' key={ele._id} onClick={() => setSelectedExam(ele)}><input name='radio' type='radio'/> {ele.examName}</label>
+          return ele.enable===true && <label className='form-control bg-dark text-white' key={ele._id} onClick={() => setSelectedExam(ele)}><input name='radio' type='radio'/> {ele.examName}</label>
         })}
       </div>
       

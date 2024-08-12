@@ -1,6 +1,8 @@
 import Modal from 'antd/es/modal/Modal';
-import React, { useRef, useState } from 'react'
-import { Card, Col, Row } from 'antd';
+import React, {  useState } from 'react'
+import { Card } from 'antd';
+import { Switch } from 'antd';
+import axios from 'axios';
 const ShowExam = (props) => {
   console.log(props.Exams)
   const [selectedExam, setSelectedExam] = useState({question:[]});
@@ -22,20 +24,30 @@ const ShowExam = (props) => {
         console.log(ans)
         setSelectedExam(ans)
     }
+
+    const [checked, setchecked] = useState(false);
+    const onChange = async(ans) => {
+      console.log(ans)
+      let enable = ans.enable
+      // console.log(`switch to ${checked}`);
+      let res =await axios.put(`https://exam-app-backend-alyd.onrender.com/exam/toggleExam/${ans._id}`,{enable:!enable})
+      let data = res.data;
+    };
   return (
     <div>
       <h3 className='text-center bg-secondary'>Show exam page</h3>
-
-      <Row gutter={16}>
+      
+      <div className='row gap-2' gutter={16}>
     {props.Exams.map((ele)=>{
-      return  <Col key={ele._id} span={8}>
+      return  <div className='col' key={ele._id} span={8}>
+        <Switch checked={ele.enable} onClick={()=>onChange(ele)} />;
       <Card onClick={()=>handleCardClick(ele)} title={`Batch:  ${ele.batch}`} bordered={false}>
         {ele.examName}
       </Card>
-    </Col>
+    </div>
     })}
    
-  </Row>
+  </div>
 
       
       <Modal title="Exam paper" open={showModel} onOk={handleSubmit} onCancel={handleCancel}>

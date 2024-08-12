@@ -48,13 +48,13 @@ const AdminPage = () => {
   const handleUserClicked=async()=>{
     let res =await axios.get('https://exam-app-backend-alyd.onrender.com/user/getall')
     let data =res.data;
-    // console.log(data);
-    // console.log(data.users)
     setallUserDetails(data.users)
   }
+  
+  
   return (
     <div className='row bg-warning m-0 p-0 pt-3'>
-      <div className="col-3">
+      <div className="col-md-3">
         <h3 className='text-center border boder-secondary p-1 bg-secondary'>Admin Dashboard</h3>
         <div className="bg-info p-2 d-flex flex-column">
           <Button className='mx-1 my-1' type="primary" onClick={showModal1}>
@@ -74,13 +74,13 @@ const AdminPage = () => {
           </Button>
         </div>
       </div>
-      <div className="col-8">
+      <div className="col-md-8">
 
         {showExamPage && <ShowExam Exams={Exams} />}
         <ShowQestion fetchExam={fetchExam} Exams={Exams} isQuestionModalOpen={isQuestionModalOpen} setIsQuestionModalOpen={setIsQuestionModalOpen} />
         <CreateExamForm setIsModalOpen1={setIsModalOpen1} isModalOpen1={isModalOpen1} />
         <CreateQuestion setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} />
-        <AlluserDetails allUser={allUserDetails} setallUserDetails={setallUserDetails}/>
+        {allUserDetails.length>0&&<AlluserDetails allUser={allUserDetails} setallUserDetails={setallUserDetails}/>}
       </div>
 
 

@@ -13,7 +13,7 @@ const Landingpage = () => {
   const [selectedExam, setSelectedExam] = useState("");
   console.log(selectedExam)
   const getAllExams = async () => {
-    let res = await axios.get('http://localhost:8080/exam/getallexam');
+    let res = await axios.get('https://exam-app-backend-alyd.onrender.com/exam/getallexam');
     let data = res.data;
     // console.log(data.exam)
     setallExams(data.exam)

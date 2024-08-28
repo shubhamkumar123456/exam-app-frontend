@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { LikeOutlined } from '@ant-design/icons';
 import { Card, Col, Row, Statistic } from 'antd';
 import { Flex, Progress } from 'antd';
+import { IoCheckmarkCircle } from "react-icons/io5";
 const StudenteDashBoard = () => {
     const [details, setdetails] = useState([]);
     const [selectedExam, setselectedExam] = useState([]);
@@ -71,8 +72,10 @@ const StudenteDashBoard = () => {
             <h5 className='fs-6 fs-md-1'>Question {i+1} :{ele.question}</h5>
             {ele.options.map((opt,i)=>{
               return <>
-             {ele.selectedOption && <li key={i} className={opt._id ===ele.selectedOption._id? 'form-control my-1 bg-success':'form-control my-1'}>{opt.text}</li>}
+             {ele.selectedOption && <li key={i} className={opt._id ===ele.selectedOption._id? 'form-control my-1 bg-success':'form-control my-1'}>{opt.text}  { <span>{ele.correctOption._id===opt._id?<IoCheckmarkCircle color='blue' size={30}/>:""} </span>} </li>}
              {!ele.selectedOption && <li key={i} className="form-control my-1">{opt.text}</li>}
+             {/* {<span><IoCheckmarkCircle /></span>} */}
+           
             
               </>
             })}

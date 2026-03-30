@@ -48,7 +48,7 @@ const StudenteDashBoard = () => {
     <div className='p-3'>
       <h3 className='text-center form-control'>Student Dashboard</h3>
       <Row className='col-12' >
-    {details.map((ele)=>{
+    {details?.map((ele)=>{
         return  <Col key={ele._id} style={{width:"120px"}}  onClick={()=>handleClick(ele)} className='col-sm-3'>
         <Card title={ele.exam.batch} bordered={true} className='border border-dark'>
           {ele.exam.examName}
@@ -63,11 +63,11 @@ const StudenteDashBoard = () => {
   <Row className='text-end d-flex justify-content-md-end justify-content-center text-center' gutter={8}>
     
     <Col  className='border boder-dark' style={{float:"right",width:"150px"}}>
-      <Statistic title="Score of this exam" value={100/selectedExam?.length*count} suffix={`/${ 100}`} />
+      <Statistic title="Score of this exam" value={(100/selectedExam?.length*count).toFixed(2)} suffix={`/${ 100}`} />
     </Col>
   </Row>
   
-{  selectedExam?.map((ele,i)=>{
+{ selectedExam.length>0 && selectedExam?.map((ele,i)=>{
         return <ol key={ele._id} type='A'>
             <h5 className='fs-6 fs-md-1'>Question {i+1} :{ele.question}</h5>
             {ele.options.map((opt,i)=>{

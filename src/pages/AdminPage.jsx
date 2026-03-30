@@ -53,10 +53,10 @@ const AdminPage = () => {
   
   
   return (
-    <div className='row bg-warning m-0 p-0 pt-3'>
+    <div className='row  m-0 p-0 pt-3'>
       <div className="col-md-3">
-        <h3 className='text-center border boder-secondary p-1 bg-secondary'>Admin Dashboard</h3>
-        <div className="bg-info p-2 d-flex flex-column">
+        <h3 className='text-center border boder-secondary p-1 '>Admin Dashboard</h3>
+        <div className=" p-2 d-flex flex-column">
           <Button className='mx-1 my-1' type="primary" onClick={showModal1}>
             Create Exam
           </Button>

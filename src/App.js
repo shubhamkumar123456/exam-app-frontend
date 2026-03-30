@@ -46,7 +46,10 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Navbar/>
+     
         <LoaderComponent show={loading}/>
+
+     
             <Routes>
                 {login===true  && admin&& <Route path='/' element={<AdminPage/>}/>}
                 {login===true  && !admin&& <Route path='/' element={<StudenteDashBoard/>}/>}
